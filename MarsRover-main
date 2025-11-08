@@ -1,0 +1,45 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
+
+/**
+ * Ergänzen Sie hier eine Beschreibung für die Klasse marsrover.
+ * 
+ * @author (Ihr Name) 
+ * @version (eine Versionsnummer oder ein Datum)
+ */
+public class marsrover extends Rover
+{
+    /**
+     * Act - tut, was auch immer marsrover tun will. Diese Methode wird aufgerufen, 
+     * sobald der 'Act' oder 'Run' Button in der Umgebung angeklickt werden. 
+     */
+    public void act()
+    {
+     Greenfoot.setSpeed(32);   
+     steuerung();
+    }
+    
+    
+    public void steuerung() 
+    {
+      if (Greenfoot.isKeyDown("d"))
+      {
+          setRotation(0);
+          fahre();
+        }
+        if (Greenfoot.isKeyDown("a"))
+      {
+          setRotation(180);
+          fahre();
+        }
+      if (Greenfoot.isKeyDown("s"))
+      {
+          setRotation(90);
+          fahre();
+        }
+        if (Greenfoot.isKeyDown("w"))
+      {
+          setRotation(270);
+          fahre();
+        }
+    }    
+}
