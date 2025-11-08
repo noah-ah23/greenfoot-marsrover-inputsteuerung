@@ -1,0 +1,37 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
+
+
+public class marsRoverBot extends Rover
+{
+   
+    public void act() // Greenfoot crasht wenn man hier while benutzt. Statdessen if benutzen
+    {
+        setImage("images/rover.png");
+        fahre();
+        if (Greenfoot.getRandomNumber(10)<3)
+        {
+        turn(Greenfoot.getRandomNumber(180)-45);
+        }
+        
+        if (isAtEdge())
+        {   
+        turn(180);
+        }
+        
+        if (marsroverVorhanden())
+        {
+        setImage("images/roverKlasse.png");    // Bei berühren die Textur wechseln
+        Greenfoot.delay(10);
+        }
+    }
+    
+    public boolean marsroverVorhanden() // Checken ob der Bot vom Spieler gefangen wurde
+    {
+        if(getOneIntersectingObject(marsrover.class)!=null)
+        {
+            return true;
+        }
+
+        return false;
+    }
+}
